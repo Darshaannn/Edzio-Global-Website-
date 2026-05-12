@@ -1,0 +1,939 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edzio | Premium Automotive Performance & Care</title>
+    <link rel="icon" href="assests/edzio logo-opt.png" type="image/png">
+    <meta name="description"
+        content="Discover the next level of automotive care at Edzio. Precision, performance, and luxury service.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <!-- Lucide Icons (via CDN for clean look) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body>
+
+    <!-- 
+    <header class="header">
+        <nav class="nav-capsule">
+            <div class="nav-left">
+                <a href="#" class="logo">
+                    <img src="assests/edzio logo-opt.png" alt="Edzio Logo" style="height: 55px; width: auto; object-fit: contain;" loading="lazy">
+                </a>
+                <ul class="menu">
+                    <li class="has-dropdown">
+                        <a href="#">Platform <i data-lucide="chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#">Performance Tuning</a></li>
+                            <li><a href="#">Smart Diagnostics</a></li>
+                            <li><a href="#">Fleet Management</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#">Customers <i data-lucide="chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#">Testimonials</a></li>
+                            <li><a href="#">Case Studies</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#">Partnerships <i data-lucide="chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#">Become a Dealer</a></li>
+                            <li><a href="#">Affiliate Program</a></li>
+                        </ul>
+                    </li>
+                    <li class="has-dropdown">
+                        <a href="#">Resources <i data-lucide="chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Documentation</a></li>
+                            <li><a href="#">Support</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="nav-right">
+                <a href="#" class="nav-link">Pricing</a>
+                <div class="lang-selector">
+                    <span>EN</span> <i data-lucide="chevron-down"></i>
+                </div>
+                <a href="#" class="btn-login">Login</a>
+                <a href="#" class="btn-demo">Demo</a>
+            </div>
+        </nav>
+    </header>
+    -->
+
+    <!-- Sticky Floating Logo -->
+    <a href="#" class="sticky-logo">
+        <img src="assests/edzio logo-opt.png" alt="Edzio Logo" fetchpriority="high">
+    </a>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero study-abroad-hero" id="hero-form-section">
+            <div class="hero-bg">
+                <img src="assests/hero bg img.png" alt="University Campus" fetchpriority="high" loading="eager">
+                <div class="overlay"></div>
+            </div>
+
+            <div class="hero-container">
+                <!-- Left Side: Content -->
+                <div class="hero-left">
+
+
+                    <h1 class="main-heading">Your journey to a global future starts here.</h1>
+                    <p class="sub-heading mb-large">Explore top study destinations, global careers, <br
+                            class="mobile-only">and a future without boundaries.</p>
+                    <p class="sub-heading-secondary">We care about your admits as much as you do.</p>
+                    <div class="hero-intake-text">2026 Intakes open now</div>
+                </div>
+
+                <!-- Right Side: Form Card -->
+                <div class="hero-right">
+                    <div class="form-card">
+                        <h3>Start Your Study Abroad Journey</h3>
+
+                        <form class="admission-form" action="https://formsubmit.co/xpandventures2024@gmail.com"
+                            method="POST">
+
+                            <!-- FormSubmit config: CC second email, stay on page, no captcha -->
+                            <input type="hidden" name="_cc" value="mn8129677@gmail.com">
+                            <input type="hidden" name="_next" value="javascript:void(0)">
+                            <input type="hidden" name="_captcha" value="false">
+                            <input type="hidden" name="_subject" value="New Free Counselling Session Request - Edzio">
+
+                            <div class="form-group">
+                                <input type="text" name="full_name" placeholder="Enter Full Name*" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Enter Email Address*" required>
+                            </div>
+                            <div class="form-group phone-group">
+                                <div class="country-code">
+                                    <img src="https://flagcdn.com/w20/in.png" alt="India" loading="lazy">
+                                    <span>+91</span>
+                                    <i data-lucide="chevron-down"></i>
+                                </div>
+                                <input type="tel" name="mobile" placeholder="Enter Mobile Number*" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="city" placeholder="Enter City*" required>
+                            </div>
+
+                            <div class="form-group">
+                                <input type="text" name="destination" placeholder="Preferred Destination*" required>
+                            </div>
+
+                            <div class="form-checkbox">
+                                <input type="checkbox" id="terms" required>
+                                <label for="terms">I agree to <a href="#">Terms & Privacy Policy</a></label>
+                            </div>
+
+                            <button type="submit" class="btn-submit">Book your free consultation</button>
+                        </form>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- University Filter Section -->
+        <section class="university-filter">
+            <div class="section-container">
+                <div class="section-header centered">
+                    <h2 class="section-title">Universities Our Students Choose</h2>
+                </div>
+
+                <div class="filter-tabs">
+                    <button class="tab-btn active" data-country="uk">United Kingdom</button>
+                    <button class="tab-btn" data-country="germany">Germany</button>
+                    <button class="tab-btn" data-country="france">France</button>
+                    <button class="tab-btn" data-country="ireland">Ireland</button>
+                    <button class="tab-btn" data-country="australia">Australia</button>
+                    <button class="tab-btn" data-country="usa">United States</button>
+                    <button class="tab-btn" data-country="uae">UAE</button>
+                </div>
+
+                <div class="university-grid" id="university-grid">
+                    <!-- ── United Kingdom ─────────────────────────────── -->
+                    <div class="uni-card" data-country="uk">
+                        <div class="uni-logo-box">
+                            <img src="assests/ucl uni.png" alt="University College London" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University College London (UCL)</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="uk">
+                        <div class="uni-logo-box">
+                            <img src="assests/kcl uk.png" alt="King's College London" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">King's College London</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="uk">
+                        <div class="uni-logo-box">
+                            <img src="assests/University_of_Edinburgh_ceremonial_roundel.svg.png"
+                                alt="University of Edinburgh" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">The University of Edinburgh</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="uk">
+                        <div class="uni-logo-box">
+                            <img src="assests/uni birmingham.png" alt="University of Birmingham" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Birmingham</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="uk">
+                        <div class="uni-logo-box">
+                            <img src="assests/manchester uni uk.png" alt="University of Manchester" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Manchester</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="uk">
+                        <div class="uni-logo-box">
+                            <img src="assests/university of leads.png" alt="University of Leeds" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Leeds</span>
+                        </div>
+                    </div>
+
+                    <!-- ── Germany ────────────────────────────────────── -->
+                    <div class="uni-card" data-country="germany" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/TUM-germany.png" alt="Technical University of Munich" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">Technical University of Munich
+                                (TUM)</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="germany" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/IU uni germany.avif" alt="IU International University" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">IU International University of Applied
+                                Sciences</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="germany" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/EU_Business_School_logo_2017_new.png" alt="EU Business School"
+                                loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">EU Business School</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="germany" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/Gisma-Logo-colored_RGB.webp" alt="GISMA University" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">GISMA University of Applied
+                                Sciences</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="germany" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/BSBI NEW LOGO.png" alt="Berlin School of Business and Innovation"
+                                loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">Berlin School of Business and
+                                Innovation (BSBI)</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="germany" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/Arden_University_logo.svg.png" alt="Arden University" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">Arden University</span>
+                        </div>
+                    </div>
+
+                    <!-- ── France ─────────────────────────────────────── -->
+                    <div class="uni-card" data-country="france" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/SKEMA_Business_School's_logo.png" alt="SKEMA Business School"
+                                loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">SKEMA Business School</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="france" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/schiller international uni.png" alt="Schiller International University"
+                                loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">Schiller International
+                                University</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="france" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/esdes uni.png" alt="ESDES Business School" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">ESDES Business School</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="france" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/Logo-kedge.jpeg" alt="KEDGE Business School" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">KEDGE Business School</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="france" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/ICN uni.png" alt="ICN Business School" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">ICN Business School</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="france" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/Audencia uni.png" alt="Audencia Business School" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">Audencia Business School</span>
+                        </div>
+                    </div>
+
+                    <!-- ── Ireland ────────────────────────────────────── -->
+                    <div class="uni-card" data-country="ireland" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/University-College-Dublin - Ireland.webp" alt="University College Dublin"
+                                loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University College Dublin</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="ireland" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/UCC uni.png" alt="University College Cork" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University College Cork</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="ireland" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/TRINITY uni.png" alt="Trinity College Dublin" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">Trinity College Dublin</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="ireland" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/limerick uni.svg" alt="University of Limerick" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Limerick</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="ireland" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/uni of galway.png" alt="University of Galway" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Galway</span>
+                        </div>
+                    </div>
+
+                    <!-- ── Australia ──────────────────────────────────── -->
+                    <div class="uni-card" data-country="australia" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/SYDNEY uni australia" alt="University of Sydney" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Sydney</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="australia" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/rmit uni.png" alt="RMIT University" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">RMIT University</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="australia" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/uni of melbourne.png" alt="University of Melbourne" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Melbourne</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="australia" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/monash-university-vector-logo.png" alt="Monash University" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">Monash University</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="australia" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/queenland uni9.png" alt="University of Queensland" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Queensland</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="australia" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/Deakin-black.png" alt="Deakin University" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">Deakin University</span>
+                        </div>
+                    </div>
+
+                    <!-- ── UAE ────────────────────────────────────────── -->
+                    <div class="uni-card" data-country="uae" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/Murdoch uni.png" alt="Murdoch University Dubai" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">Murdoch University Dubai</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="uae" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/GBS.png" alt="GBS Dubai" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">GBS Dubai</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="uae" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/BirminghamUni-Logo-Membership.webp" alt="University of Birmingham Dubai"
+                                loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Birmingham Dubai</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="uae" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/UOWD_Secondary_CMYK_Dark Blue.webp"
+                                alt="University of Wollongong in Dubai" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Wollongong in
+                                Dubai</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="uae" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/DMU uni.png" alt="De Montfort University Dubai" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">De Montfort University Dubai</span>
+                        </div>
+                    </div>
+
+                    <!-- ── United States ──────────────────────────────── -->
+                    <div class="uni-card" data-country="usa" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/Adelphi-Primary-Logo.png" alt="Adelphi University" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">Adelphi University</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="usa" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/csu-cleveland-state-university1543 - USA.jpg.jpeg"
+                                alt="Cleveland State University" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">Cleveland State University</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="usa" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/florida international uni.png" alt="Florida International University"
+                                loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">Florida International
+                                University</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="usa" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/missouri uni.png" alt="Missouri University of Science and Technology"
+                                loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">Missouri University of Science and
+                                Technology</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="usa" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/Seattle_University.png" alt="Seattle University" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">Seattle University</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="usa" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/uni of dayton.png" alt="University of Dayton" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Dayton</span>
+                        </div>
+                    </div>
+
+                    <!-- Read More button for USA -->
+                    <div class="usa-read-more-text"
+                        style="display: none; width: 100%; text-align: center; margin-top: 15px; margin-bottom: 10px; cursor: pointer; color: var(--primary-color); font-weight: 700; font-size: 1.15rem; text-decoration: underline; opacity: 0; transition: color 0.3s ease;"
+                        onmouseover="this.style.color='var(--accent-color)'"
+                        onmouseout="this.style.color='var(--primary-color)'">
+                        Read more...
+                    </div>
+                    <div class="uni-card" data-country="usa" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/illinois usa.jpeg" alt="University of Illinois Springfield" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Illinois
+                                Springfield</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="usa" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/uni of illinois chicago.png" alt="University of Illinois at Chicago"
+                                loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Illinois at
+                                Chicago</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="usa" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/uni boston.png" alt="University of Massachusetts Boston" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Massachusetts
+                                Boston</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="usa" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/uni nevada reno.png" alt="University of Nevada Reno" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Nevada, Reno</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="usa" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/uni of south carolina.png" alt="University of South Carolina"
+                                loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of South Carolina</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="usa" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/texas uni.jpg" alt="University of Texas San Antonio" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Texas at San
+                                Antonio</span>
+                        </div>
+                    </div>
+                    <div class="uni-card" data-country="usa" style="display: none;">
+                        <div class="uni-logo-box">
+                            <img src="assests/uni of utah.png" alt="University of Utah" loading="lazy"
+                                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                            <span class="uni-text-fallback" style="display:none;">University of Utah</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section (Grid Steps) -->
+        <section class="wcu-steps">
+            <div class="section-container">
+                <div class="section-header centered">
+                    <h2 class="section-title">Why Choose Us</h2>
+                </div>
+
+                <div class="wcu-steps-grid">
+                    <!-- Step 1 -->
+                    <div class="wcu-step-card">
+                        <div class="wcu-card-left">
+                            <div class="wcu-step-text">
+                                <h3>Student-Career-First Approach</h3>
+                                <p>We prioritise every student’s long-term growth, guiding them toward the right
+                                    academic path and a seamless transition abroad.</p>
+                            </div>
+                        </div>
+                        <div class="wcu-card-right">
+                            <img src="assests/WHy chosse us bg img (1)-opt.jpg" alt="Student Career Approach"
+                                loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="wcu-step-card">
+                        <div class="wcu-card-left">
+                            <div class="wcu-step-text">
+                                <h3>Personalized Guidance</h3>
+                                <p>We shortlist a balanced mix of dream and target universities and courses aligned with
+                                    each student’s goals and profile.</p>
+                            </div>
+                        </div>
+                        <div class="wcu-card-right">
+                            <img src="assests/WHy chosse us bg img (2)-opt.jpg" alt="Personalized Guidance"
+                                loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="wcu-step-card">
+                        <div class="wcu-card-left">
+                            <div class="wcu-step-text">
+                                <h3>Application, Visa & <br> Financial Assistance</h3>
+                                <p>Detailed guidance for applications, visas, scholarship opportunities, and education
+                                    loan support across the UK, Australia, and other global destinations.</p>
+                            </div>
+                        </div>
+                        <div class="wcu-card-right">
+                            <img src="assests/WHy chosse us bg img (4)-opt.jpg" alt="Application Visa Assistance"
+                                loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="wcu-step-card">
+                        <div class="wcu-card-left">
+                            <div class="wcu-step-text">
+                                <h3>End-to-End <br> Support</h3>
+                                <p>Comprehensive assistance from initial inquiry to post-landing and settlement support.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="wcu-card-right">
+                            <img src="assests/WHy chosse us bg img (3)-opt.jpg" alt="End to End Support" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horizontal Admission Process (Interactive Journey) -->
+        <section class="track" id="admission-track">
+            <div class="camera">
+                <div class="track-bg">
+                    <img src="assests/admission_journey_bg_1777963526301.png" alt="Journey Background" loading="lazy">
+                    <div class="track-overlay"></div>
+                </div>
+                <div class="section-container" style="padding-bottom: 0;">
+                    <div class="section-header-compact-new">
+                        <h2>Admission Process</h2>
+                    </div>
+                </div>
+
+                <div class="frame" id="process-frame">
+                    <!-- Step 1 -->
+                    <div class="card-horizontal" data-step="1">
+                        <div class="step-card-inner">
+                            <div class="step-image-box">
+                                <img src="assests/step1_counselling_1777963543746.png" alt="Expert Counselling">
+                            </div>
+                            <span class="step-count">01</span>
+                            <div class="step-text-box">
+                                <h2>Career Clarity & Psychometric Assessment</h2>
+                                <p>We begin by understanding your personality, strengths, interests, and long-term goals
+                                    through our psychometric assessment to help identify the right academic and career
+                                    direction.</p>
+                            </div>
+                        </div>
+                        <div class="step-connector">
+                            <div class="connector-progress"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div class="card-horizontal" data-step="2">
+                        <div class="step-card-inner">
+                            <div class="step-image-box">
+                                <img src="assests/Consultation & Counseling.jpg.jpeg" alt="Consultation & Counseling"
+                                    loading="lazy">
+                            </div>
+                            <span class="step-count">02</span>
+                            <div class="step-text-box">
+                                <h2>Consultation & Counseling</h2>
+                                <p>We assess your objectives, strengths, and aspirations to build a solid foundation for
+                                    your study abroad journey.</p>
+                            </div>
+                        </div>
+                        <div class="step-connector">
+                            <div class="connector-progress"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3 -->
+                    <div class="card-horizontal" data-step="3">
+                        <div class="step-card-inner">
+                            <div class="step-image-box">
+                                <img src="assests/University & Course Selection.jpg.jpeg"
+                                    alt="University & Course Selection" style="object-position: center 0%;"
+                                    loading="lazy">
+                            </div>
+                            <span class="step-count">03</span>
+                            <div class="step-text-box">
+                                <h2>University & Course Selection</h2>
+                                <p>We select academic programmes that match your qualifications and future career goals
+                                    perfectly.</p>
+                            </div>
+                        </div>
+                        <div class="step-connector">
+                            <div class="connector-progress"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4 -->
+                    <div class="card-horizontal" data-step="4">
+                        <div class="step-card-inner">
+                            <div class="step-image-box">
+                                <img src="assests/step4_visa_guidance_1777963594392.png" alt="Visa Assistance"
+                                    loading="lazy">
+                            </div>
+                            <span class="step-count">04</span>
+                            <div class="step-text-box">
+                                <h2>Application, Visa & Financial Assistance</h2>
+                                <p>Detailed guidance for applications, visas, scholarship opportunities, and education
+                                    loan support across the UK, Australia, and other global destinations.</p>
+                            </div>
+                        </div>
+                        <div class="step-connector">
+                            <div class="connector-progress"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 5 -->
+                    <div class="card-horizontal" data-step="5">
+                        <div class="step-card-inner">
+                            <div class="step-image-box">
+                                <img src="assests/step5_pre_departure_1777963613515.png" alt="Pre-Departure Counselling"
+                                    style="object-position: center 25%;" loading="lazy">
+                            </div>
+                            <span class="step-count">05</span>
+                            <div class="step-text-box">
+                                <h2>Pre-Departure Support</h2>
+                                <p>From accommodation to travel arrangements, we ensure you’re fully prepared before you
+                                    fly.</p>
+                            </div>
+                        </div>
+                        <div class="step-connector">
+                            <div class="connector-progress"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 6 -->
+                    <div class="card-horizontal" data-step="6">
+                        <div class="step-card-inner">
+                            <div class="step-image-box">
+                                <img src="assests/step6_post_landing_support_1777963631022.png"
+                                    alt="Post-Landing Support" loading="lazy">
+                            </div>
+                            <span class="step-count">06</span>
+                            <div class="step-text-box">
+                                <h2>Ongoing Mentorship</h2>
+                                <p>We don’t stop at the airport. Enjoy ongoing assistance throughout your entire
+                                    educational journey.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            // Register GSAP Plugins
+            gsap.registerPlugin(ScrollTrigger);
+
+            const track = document.querySelector("#admission-track");
+            const frame = document.querySelector("#process-frame");
+            const cards = document.querySelectorAll(".card-horizontal");
+
+            if (window.innerWidth > 768) {
+                // 1. Primary Horizontal Scroll Tween
+                const horizontalTween = gsap.to(frame, {
+                    x: () => -(frame.scrollWidth - window.innerWidth),
+                    ease: "none",
+                    scrollTrigger: {
+                        trigger: track,
+                        pin: true,
+                        scrub: 1,
+                        start: "top top",
+                        // end strictly matches the distance we need to move
+                        end: () => "+=" + (frame.scrollWidth - window.innerWidth),
+                        invalidateOnRefresh: true,
+                    }
+                });
+
+                // 2. Individual Card Animations (Scale & Progress)
+                cards.forEach((card, index) => {
+                    const cardInner = card.querySelector(".step-card-inner");
+                    const connector = card.querySelector(".connector-progress");
+
+                    // Scale effect when card is in focus
+                    gsap.to(cardInner, {
+                        scale: 1.1,
+                        borderColor: "var(--primary-color)",
+                        boxShadow: "0 40px 80px rgba(17, 16, 77, 0.15)",
+                        scrollTrigger: {
+                            trigger: card,
+                            containerAnimation: horizontalTween, // Link to horizontal movement
+                            start: "left center+=100",
+                            end: "right center-=100",
+                            scrub: true,
+                        }
+                    });
+
+                    // Connector fill progress
+                    if (connector) {
+                        gsap.to(connector, {
+                            width: "100%",
+                            scrollTrigger: {
+                                trigger: card,
+                                containerAnimation: horizontalTween,
+                                start: "left center",
+                                end: "right center",
+                                scrub: true,
+                            }
+                        });
+                    }
+                });
+            }
+        </script>
+
+
+        <!-- Testimonial One Frame Section -->
+        <section class="testimonial-one-frame">
+            <div class="section-container">
+                <div class="intro-content-one-frame">
+                    <h2>Student Testimonials</h2>
+                </div>
+
+                <div class="testimonial-grid">
+                    <!-- Student 1: Burhan Khan -->
+                    <div class="testimonial-card-new" data-aos="fade-up">
+                        <div class="card-header">
+                            <div class="student-info-main">
+
+                                <div class="student-meta">
+                                    <h3>Burhan Khan</h3>
+                                    <p class="uni-name">University of Sheffield</p>
+                                    <p class="course-name">MSc Management (Int. Business)</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <i data-lucide="quote" class="quote-icon"></i>
+                            <p>I’ve seen Ms. Radha work closely with students, and what stands out is her clarity and
+                                reliability. As a counsellor, she doesn’t oversell or rush decisions; instead, she takes
+                                the time to explain options, costs, and implications in a way that students and families
+                                can truly understand.</p>
+                            <p>Ms. Radha is a solid professional in the education space and someone students can
+                                genuinely trust.</p>
+                        </div>
+                    </div>
+
+                    <!-- Student 2: Dr. Annapoorna Donnepuddi -->
+                    <div class="testimonial-card-new" data-aos="fade-up" data-aos-delay="100">
+                        <div class="card-header">
+                            <div class="student-info-main">
+
+                                <div class="student-meta">
+                                    <h3>Dr. Annapoorna Donnepuddi</h3>
+                                    <p class="uni-name">University of Lancashire</p>
+                                    <p class="course-name">MRes Medical Sciences</p>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="card-body">
+                            <i data-lucide="quote" class="quote-icon"></i>
+                            <p>Ms. Radha has been a constant support throughout my journey. What I really value is her
+                                patience and the way she simplifies things without making it overwhelming.</p>
+                            <p>I truly believe she played an important role in where I am today, and I’m very grateful
+                                for her guidance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- New Testimonials Grid Section -->
+
+        <!-- Testimonial Slider Section -->
+
+        <!-- CTA Section -->
+        <section class="cta-section" style="text-align: center; padding: 20px 0 60px 0;">
+            <div class="footer-cta-box">
+                <a href="#hero-form-section" class="btn-footer-cta" onclick="scrollToForm(event)">BOOK A FREE
+                    CONSULTATION</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-new">
+        <div class="footer-overlay">
+            <img src="assests/footer_bg_student_1777875808239.png" alt="Graduation" loading="lazy">
+            <div class="dark-overlay"></div>
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-top">
+                <h2>Let’s Build Your Global Future</h2>
+            </div>
+
+            <div class="footer-content-layout">
+                <div class="footer-branch-info">
+                    <h3>Edzio Global - Mumbai Head Office</h3>
+                    <div class="address-details">
+                        <p><i data-lucide="map-pin" style="width: 16px; margin-right: 10px;"></i> <span>1104, 72Corp,
+                                SakiVihar Road, Andheri East, Mumbai Maharashtra 400072</span></p>
+                        <p><i data-lucide="mail" style="width: 16px; margin-right: 10px;"></i>
+                            <span><strong>Email:&nbsp;</strong> foundersoffice@edzioglobal.com,
+                                info@edzioglobal.com</span>
+                        </p>
+                        <p><i data-lucide="phone" style="width: 16px; margin-right: 10px;"></i>
+                            <span><strong>Phone:&nbsp;</strong> +91 9289825364</span>
+                        </p>
+                        <p><i data-lucide="clock" style="width: 16px; margin-right: 10px;"></i> <span>Mon-Sat, 9:30am -
+                                6:30pm</span>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="footer-map-box">
+                    <div class="map-wrapper">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3770.067132013746!2d72.88486787418485!3d19.10471065107263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c9a1a68dd693%3A0xd8b347719d99290e!2s72%20Corp!5e0!3m2!1sen!2sin!4v1778491703729!5m2!1sen!2sin"
+                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                        <a href="https://maps.google.com/?q=1104,+72Corp,+SakiVihar+Road,+Andheri+East,+Mumbai+Maharashtra+400072"
+                            target="_blank" class="open-maps">Open in Maps <i data-lucide="external-link"></i></a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="footer-bottom-mini">
+                <p>&copy; 2026 Edzio Global Education. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+
+</html>
