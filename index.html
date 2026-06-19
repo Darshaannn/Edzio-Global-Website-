@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edzio | Premium Automotive Performance & Care</title>
+    <title>Your Study Abroad Confidant - Edzio Global</title>
     <link rel="icon" href="assests/edzio logo-opt.png" type="image/png">
     <meta name="description"
-        content="Discover the next level of automotive care at Edzio. Precision, performance, and luxury service.">
+        content="Discover your path to a global future at Edzio. Expert guidance for top study destinations, university admissions, and global careers.">
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts -->
     <link
@@ -105,14 +105,10 @@
                     <div class="form-card">
                         <h3>Start Your Study Abroad Journey</h3>
 
-                        <form class="admission-form" action="https://formsubmit.co/xpandventures2024@gmail.com"
-                            method="POST">
-
-                            <!-- FormSubmit config: CC second email, stay on page, no captcha -->
-                            <input type="hidden" name="_cc" value="mn8129677@gmail.com">
-                            <input type="hidden" name="_next" value="javascript:void(0)">
+                        <form class="admission-form">
+                            <!-- Dual-Submission Handling in script.js (Reliable Free Delivery) -->
+                            <input type="hidden" name="_subject" value="New Lead: Edzio Study Abroad Inquiry">
                             <input type="hidden" name="_captcha" value="false">
-                            <input type="hidden" name="_subject" value="New Free Counselling Session Request - Edzio">
 
                             <div class="form-group">
                                 <input type="text" name="full_name" placeholder="Enter Full Name*" required>
@@ -146,6 +142,58 @@
                         </form>
 
 
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Countdown Timer Section -->
+        <section class="countdown-section">
+            <div class="countdown-container">
+                <h2 class="countdown-title"> September 2026 Intake Application Closes In</h2>
+                <div class="timer-display">
+                    <!-- Days -->
+                    <div class="timer-column">
+                        <div class="timer-group">
+                            <div class="digit-card" id="days-tens"><span class="digit-val">0</span><span
+                                    class="card-crease"></span></div>
+                            <div class="digit-card" id="days-ones"><span class="digit-val">0</span><span
+                                    class="card-crease"></span></div>
+                        </div>
+                        <div class="timer-label">Days</div>
+                    </div>
+                    <span class="timer-separator">:</span>
+                    <!-- Hours -->
+                    <div class="timer-column">
+                        <div class="timer-group">
+                            <div class="digit-card" id="hours-tens"><span class="digit-val">0</span><span
+                                    class="card-crease"></span></div>
+                            <div class="digit-card" id="hours-ones"><span class="digit-val">0</span><span
+                                    class="card-crease"></span></div>
+                        </div>
+                        <div class="timer-label">Hr</div>
+                    </div>
+                    <span class="timer-separator">:</span>
+                    <!-- Minutes -->
+                    <div class="timer-column">
+                        <div class="timer-group">
+                            <div class="digit-card" id="minutes-tens"><span class="digit-val">0</span><span
+                                    class="card-crease"></span></div>
+                            <div class="digit-card" id="minutes-ones"><span class="digit-val">0</span><span
+                                    class="card-crease"></span></div>
+                        </div>
+                        <div class="timer-label">Min</div>
+                    </div>
+                    <span class="timer-separator">:</span>
+                    <!-- Seconds -->
+                    <div class="timer-column">
+                        <div class="timer-group">
+                            <div class="digit-card" id="seconds-tens"><span class="digit-val">0</span><span
+                                    class="card-crease"></span></div>
+                            <div class="digit-card" id="seconds-ones"><span class="digit-val">0</span><span
+                                    class="card-crease"></span></div>
+                        </div>
+                        <div class="timer-label">Sec</div>
                     </div>
                 </div>
             </div>
@@ -615,8 +663,14 @@
                         </div>
                     </div>
                 </div>
+                <div style="text-align: center; margin-top: 40px; margin-bottom: 20px;">
+                    <button class="btn-download-brochure" id="open-brochure-modal-btn">
+                        <i data-lucide="download"></i> Download Free Brochure
+                    </button>
+                </div>
             </div>
         </section>
+
 
         <!-- Horizontal Admission Process (Interactive Journey) -->
         <section class="track" id="admission-track">
@@ -771,21 +825,42 @@
                     }
                 });
 
+
                 // 2. Individual Card Animations (Scale & Progress)
                 cards.forEach((card, index) => {
                     const cardInner = card.querySelector(".step-card-inner");
                     const connector = card.querySelector(".connector-progress");
 
-                    // Scale effect when card is in focus
+                    // Set initial transform origin
+                    gsap.set(cardInner, { transformOrigin: "center center" });
+
+                    // Scale & fade effect when card is entering center focus
+                    gsap.fromTo(cardInner, 
+                        { scale: 0.92, opacity: 0.75 },
+                        {
+                            scale: 1.05,
+                            opacity: 1,
+                            borderColor: "var(--primary-color)",
+                            boxShadow: "0 40px 80px rgba(17, 16, 77, 0.15)",
+                            scrollTrigger: {
+                                trigger: card,
+                                containerAnimation: horizontalTween,
+                                start: "left 85%",
+                                end: "left 45%",
+                                scrub: true,
+                            }
+                        }
+                    );
+
+                    // Scale & fade out as card leaves center focus
                     gsap.to(cardInner, {
-                        scale: 1.1,
-                        borderColor: "var(--primary-color)",
-                        boxShadow: "0 40px 80px rgba(17, 16, 77, 0.15)",
+                        scale: 0.92,
+                        opacity: 0.75,
                         scrollTrigger: {
                             trigger: card,
-                            containerAnimation: horizontalTween, // Link to horizontal movement
-                            start: "left center+=100",
-                            end: "right center-=100",
+                            containerAnimation: horizontalTween,
+                            start: "right 55%",
+                            end: "right 15%",
                             scrub: true,
                         }
                     });
@@ -807,6 +882,76 @@
             }
         </script>
 
+
+        <!-- Scholarship Assistance Section Commented Out
+        <section class="scholarship-section" id="scholarships">
+            <div class="section-container scholarship-grid-container">
+                <div class="scholarship-left-col">
+                    <span class="scholarship-subtitle">Funding Your Future</span>
+                    <h2 class="scholarship-title">Scholarship Assistance</h2>
+                    <p class="scholarship-desc">The right scholarship can significantly reduce your education costs. At Edzio, we help you identify and apply for scholarships that match your academic profile, destination, and career goals so you never miss an opportunity.</p>
+                    
+                    <div class="scholarship-stats-badge">
+                        <div class="stat-badge-item">
+                            <span class="stat-badge-num">100%</span>
+                            <span class="stat-badge-lbl">Tuition Coverage Possible</span>
+                        </div>
+                        <div class="stat-badge-divider"></div>
+                        <div class="stat-badge-item">
+                            <span class="stat-badge-num">50+</span>
+                            <span class="stat-badge-lbl">Global Funding Schemes</span>
+                        </div>
+                    </div>
+                    
+                    <a href="#hero-form-section" class="scholarship-cta-btn" onclick="scrollToForm(event)">Check Eligibility</a>
+                </div>
+                
+                <div class="scholarship-cards-grid">
+                    <div class="scholarship-feature-card">
+                        <div class="card-icon-wrapper fully-funded">
+                            <i data-lucide="globe"></i>
+                        </div>
+                        <h3>Fully Funded Schemes</h3>
+                        <p>Explore fully funded scholarships like Erasmus Mundus, Eiffel & DAAD to cover tuition and living costs.</p>
+                    </div>
+                    
+                    <div class="scholarship-feature-card">
+                        <div class="card-icon-wrapper merit-based">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <h3>Merit & University Funding</h3>
+                        <p>Discover university-specific and merit-based funding options tailored to your achievements.</p>
+                    </div>
+                    
+                    <div class="scholarship-feature-card">
+                        <div class="card-icon-wrapper guidance">
+                            <i data-lucide="file-text"></i>
+                        </div>
+                        <h3>End-to-End Guidance</h3>
+                        <p>Get clarity on eligibility criteria, application deadlines, and required document checklists.</p>
+                    </div>
+                    
+                    <div class="scholarship-feature-card">
+                        <div class="card-icon-wrapper profile">
+                            <i data-lucide="sparkles"></i>
+                        </div>
+                        <h3>Premium Profile Building</h3>
+                        <p>Strengthen your application with expert SOP reviews and comprehensive profile enhancement support.</p>
+                    </div>
+
+                    <div class="scholarship-feature-card span-2">
+                        <div class="card-icon-wrapper integrated">
+                            <i data-lucide="compass"></i>
+                        </div>
+                        <div class="span-card-content">
+                            <h3>Integrated Journey Planning</h3>
+                            <p>Plan scholarships seamlessly alongside your admission, education loan, and visa journeys for maximum confidence.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        -->
 
         <!-- Testimonial One Frame Section -->
         <section class="testimonial-one-frame">
@@ -876,6 +1021,131 @@
             </div>
         </section>
 
+        <!-- FAQ Section -->
+        <section class="faq-section" id="faq">
+            <div class="section-container faq-grid-container">
+                <div class="faq-left-col">
+                    <span class="faq-subtitle">Got Questions?</span>
+                    <h2 class="faq-title">Frequently Asked Questions</h2>
+                    <p class="faq-desc">Can't find the answer you're looking for? Reach out to our expert team for personalized guidance.</p>
+                    <a href="#hero-form-section" class="faq-cta-btn" onclick="scrollToForm(event)">Book Free Consultation</a>
+                </div>
+                <div class="faq-accordion">
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>When should I start applying for the January 2027 intake?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>We recommend starting your application 6-8 months before the intake. Applying early gives you access to better university options, scholarship opportunities, smoother visa timelines, and enough time to make informed decisions without unnecessary pressure.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Why is Edzio different from other study abroad consultancies?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Edzio follows a career-first approach. Instead of recommending popular universities, we begin by understanding who you are, what career you want to build (in what industry and where you work in the future), and then align the right country, course, and university with those goals.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I study abroad without IELTS?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes, depending on the university and destination. Many institutions accept MOI waivers or alternative English proficiency tests like PTE or Duolingo. Our counsellors will help you choose the best pathway for your profile.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>How do you help me choose the right university and course?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>We first understand your academic background, career aspirations, budget, interests, and long-term goals before recommending universities and courses that genuinely fit your future plans.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Do you provide end-to-end application support?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Absolutely. From university shortlisting and SOP guidance to applications, visa documentation, education loans, scholarships, and pre-departure assistance, our team supports you throughout your study abroad journey.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can Edzio help me get an education loan?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Absolutely! The loan journey starts the moment you decide to study abroad and not after you receive an admission offer. We help you understand your funding options, connect you with trusted partners, including SBI, Bank of Baroda, ICICI, IDFC, Axis Bank, and Credila, and guide you through the documentation and approval process so you can plan your education with confidence.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can I apply if I have a study gap, low GPA, or backlogs?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes. Every student's journey is unique. We evaluate your complete profile, including academics, experience, and career goals and help identify universities where you have the best chance of admission.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Will Edzio help me with my student visa?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes. Our team provides complete visa guidance, document verification, financial documentation support, and interview preparation to help you approach the visa process with confidence and clarity.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can Edzio help me get scholarships?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Yes. We help students identify merit-based, university-specific, and country-specific scholarship opportunities based on their academic profile and career goals. Our team also guides you through the application process to maximise your chances of receiving financial assistance.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <button class="faq-question">
+                            <span>Can parents be part of the counselling process?</span>
+                            <i data-lucide="plus" class="faq-icon"></i>
+                        </button>
+                        <div class="faq-answer">
+                            <div class="faq-answer-inner">
+                                <p>Absolutely. We encourage parents to participate in counselling sessions so they can understand university options, costs, scholarships, visa requirements, and career opportunities, making every decision transparent and informed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
     </main>
 
     <footer class="footer-new">
@@ -928,6 +1198,48 @@
             </div>
         </div>
     </footer>
+
+    <!-- Brochure Download Modal -->
+    <div class="brochure-modal" id="brochure-modal" style="display: none;">
+        <div class="brochure-modal-overlay" id="brochure-modal-overlay"></div>
+        <div class="brochure-modal-content">
+            <button class="brochure-modal-close" id="close-brochure-modal-btn">&times;</button>
+            <h3>Download Free Brochure</h3>
+            <p>Please enter your details to receive the brochure instantly.</p>
+            <form class="admission-form brochure-form" id="brochure-download-form">
+                <input type="hidden" name="_subject" value="New Lead: Brochure Download">
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="form-group">
+                    <input type="text" name="full_name" placeholder="Enter Full Name*" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Enter Email Address*" required>
+                </div>
+                <div class="form-group phone-group">
+                    <div class="country-code">
+                        <img src="https://flagcdn.com/w20/in.png" alt="India" loading="lazy">
+                        <span>+91</span>
+                        <i data-lucide="chevron-down"></i>
+                    </div>
+                    <input type="tel" name="mobile" placeholder="Enter Mobile Number*" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="destination" placeholder="Preferred Destination*" required>
+                </div>
+                <div class="form-group">
+                    <select name="intake" required style="width: 100%; padding: 12px 15px; border-radius: 10px; border: 1px solid #cbd5e1; background: #ffffff; color: var(--primary-color); font-family: inherit; font-size: 0.95rem;">
+                        <option value="" disabled selected style="color: #64748b;">Preferred Intake*</option>
+                        <option value="September 2026">September 2026</option>
+                        <option value="January 2027">January 2027</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="btn-submit">Submit & Download</button>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
     <script>

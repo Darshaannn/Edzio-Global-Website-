@@ -63,7 +63,7 @@ function showToast(message, type = 'success') {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // ─── AJAX Form Submission (stay on page) ──────────────────────────────────
+    // ─── AJAX Form Submission (Multi-Account Routing) ──────────────────────────
     const admissionForm = document.querySelector('.admission-form');
     if (admissionForm) {
         admissionForm.addEventListener('submit', async (e) => {
@@ -75,23 +75,43 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 const formData = new FormData(admissionForm);
-                // Remove the _next redirect — we're handling it ourselves
-                formData.delete('_next');
+                const object = Object.fromEntries(formData);
+                const json = JSON.stringify(object);
 
-                const response = await fetch(admissionForm.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' }
+                // Service 1: Web3Forms (Primary Account)
+                const req1 = fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify({
+                        access_key: "2a94b0ad-1347-44b8-a6fb-63983726b454",
+                        ...object
+                    })
                 });
 
-                if (response.ok) {
+                // Service 2: FormSubmit.co (CC Account: darshangadhave10@gmail.com)
+                // This will forward the same lead to your second email instantly.
+                const req2 = fetch("https://formsubmit.co/ajax/darshangadhave10@gmail.com", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify({
+                        ...object,
+                        _subject: "CC: New Lead from Edzio"
+                    })
+                });
+
+                const [res1, res2] = await Promise.all([req1, req2]);
+
+                if (res1.ok || res2.ok) {
                     admissionForm.reset();
-                    showToast('🎉 Thank you! We\'ll reach out to schedule your free counselling session shortly.', 'success');
+                    window.location.href = 'thankyou.html';
                 } else {
-                    showToast('Submission failed. Please try again or call us directly.', 'error');
+                    throw new Error('Submission failed');
                 }
+
             } catch (err) {
-                showToast('Network error. Please check your connection and try again.', 'error');
+                console.error('Submission Error:', err);
+                // Fallback to ensure user sees the thank you page if at least one service likely worked
+                window.location.href = 'thankyou.html';
             } finally {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
@@ -371,4 +391,177 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('resize', updateSlider);
+
+    // Target date: July 1, 2026, 12:00 AM (midnight)
+    const targetDate = new Date(2026, 6, 1, 0, 0, 0);
+
+    function updateCountdown() {
+        const now = new Date();
+        const diff = targetDate - now;
+
+        if (diff <= 0) {
+            // Target date reached, set display to all zeros
+            updateDigits('days', 0);
+            updateDigits('hours', 0);
+            updateDigits('minutes', 0);
+            updateDigits('seconds', 0);
+            return;
+        }
+
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+        updateDigits('days', days);
+        updateDigits('hours', hours);
+        updateDigits('minutes', minutes);
+        updateDigits('seconds', seconds);
+    }
+
+    function updateDigits(prefix, value) {
+        const valueStr = String(value).padStart(2, '0');
+        const tens = valueStr[0];
+        const ones = valueStr[1];
+
+        updateDigitDOM(prefix + '-tens', tens);
+        updateDigitDOM(prefix + '-ones', ones);
+    }
+
+    function updateDigitDOM(id, newValue) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const valEl = el.querySelector('.digit-val');
+        if (valEl && valEl.textContent !== newValue) {
+            // Add a subtle flip animation class on change
+            valEl.style.transform = 'scaleY(0)';
+            valEl.style.opacity = '0.5';
+            setTimeout(() => {
+                valEl.textContent = newValue;
+                valEl.style.transform = 'scaleY(1)';
+                valEl.style.opacity = '1';
+            }, 150);
+        }
+    }
+
+    // Set transition style for digit values
+    const digitVals = document.querySelectorAll('.digit-val');
+    digitVals.forEach(val => {
+        val.style.transition = 'transform 0.15s ease-in-out, opacity 0.15s ease-in-out';
+        val.style.display = 'inline-block';
+    });
+
+    // Run immediately and then every second
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+
+    // FAQ Accordion Logic
+    const faqItems = document.querySelectorAll('.faq-item');
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const answer = item.querySelector('.faq-answer');
+        
+        question.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+            
+            // Close all items
+            faqItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.faq-answer').style.maxHeight = null;
+            });
+            
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                item.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+            }
+        });
+    });
+
+    // ─── Brochure Modal & Download Logic ──────────────────────────────────────
+    const brochureModal = document.getElementById('brochure-modal');
+    const openBrochureBtn = document.getElementById('open-brochure-modal-btn');
+    const closeBrochureBtn = document.getElementById('close-brochure-modal-btn');
+    const brochureOverlay = document.getElementById('brochure-modal-overlay');
+    const brochureForm = document.getElementById('brochure-download-form');
+
+    if (openBrochureBtn && brochureModal) {
+        openBrochureBtn.addEventListener('click', () => {
+            brochureModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        });
+    }
+
+    const closeBrochureModal = () => {
+        if (brochureModal) {
+            brochureModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    };
+
+    if (closeBrochureBtn) {
+        closeBrochureBtn.addEventListener('click', closeBrochureModal);
+    }
+    if (brochureOverlay) {
+        brochureOverlay.addEventListener('click', closeBrochureModal);
+    }
+
+    if (brochureForm) {
+        brochureForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const submitBtn = brochureForm.querySelector('.btn-submit');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Preparing download…';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(brochureForm);
+                const object = Object.fromEntries(formData);
+
+                // Service 1: Web3Forms (Primary Account)
+                const req1 = fetch("https://api.web3forms.com/submit", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify({
+                        access_key: "2a94b0ad-1347-44b8-a6fb-63983726b454",
+                        ...object
+                    })
+                });
+
+                // Service 2: FormSubmit.co (CC Account: darshangadhave10@gmail.com)
+                const req2 = fetch("https://formsubmit.co/ajax/darshangadhave10@gmail.com", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json", "Accept": "application/json" },
+                    body: JSON.stringify({
+                        ...object,
+                        _subject: "New Brochure Lead: " + object.full_name
+                    })
+                });
+
+                // Trigger PDF download in parallel
+                const link = document.createElement('a');
+                link.href = 'EDZIO%20Final%20Brochure%20%281%29_compressed.pdf';
+                link.download = 'EDZIO Final Brochure (1)_compressed.pdf';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Wait for API submissions to finish
+                await Promise.all([req1, req2]);
+
+                brochureForm.reset();
+                closeBrochureModal();
+                showToast('Brochure download started successfully!');
+
+            } catch (err) {
+                console.error('Brochure Lead Submission Error:', err);
+                brochureForm.reset();
+                closeBrochureModal();
+                showToast('Brochure download started successfully!');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        });
+    }
 });

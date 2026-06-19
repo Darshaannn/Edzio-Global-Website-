@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Edzio Global Education</title>
+    <link rel="icon" href="assests/edzio logo-opt.png" type="image/png">
+    <meta name="description" content="Thank you for reaching out to Edzio. Our expert counsellors will contact you shortly to begin your study abroad journey.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- GSAP for animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        .thankyou-section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .thankyou-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 60px 40px;
+            border-radius: 32px;
+            box-shadow: 0 40px 100px rgba(17, 16, 77, 0.1);
+            max-width: 700px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 10;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--accent-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            box-shadow: 0 20px 40px rgba(125, 211, 226, 0.3);
+        }
+
+        .thankyou-card h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .thankyou-card p {
+            font-size: 1.2rem;
+            color: #475569;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .btn-home {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--primary-color);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 100px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 20px 40px rgba(17, 16, 77, 0.2);
+        }
+
+        .btn-home:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(17, 16, 77, 0.3);
+            background: #1a1994;
+        }
+
+        /* Decorative blobs */
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 1;
+            opacity: 0.5;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: var(--accent-color);
+            top: -100px;
+            right: -100px;
+        }
+
+        .blob-2 {
+            width: 300px;
+            height: 300px;
+            background: var(--primary-color);
+            bottom: -50px;
+            left: -50px;
+        }
+
+        @media (max-width: 768px) {
+            .thankyou-card {
+                padding: 40px 20px;
+            }
+            .thankyou-card h1 {
+                font-size: 2.2rem;
+            }
+            .thankyou-card p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Sticky Floating Logo -->
+    <a href="index.html" class="sticky-logo">
+        <img src="assests/edzio logo-opt.png" alt="Edzio Logo">
+    </a>
+
+    <main>
+        <section class="thankyou-section">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+
+            <div class="thankyou-card">
+                <div class="success-icon">
+                    <i data-lucide="check" style="width: 40px; height: 40px;"></i>
+                </div>
+                <h1>Submission Successful!</h1>
+                <p>Will reach you shortly</p>
+                <a href="index.html" class="btn-home">
+                    <i data-lucide="arrow-left"></i>
+                    Back to Home
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // GSAP Animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const tl = gsap.timeline();
+
+            tl.from('.thankyou-card', {
+                y: 50,
+                opacity: 0,
+                duration: 1,
+                ease: 'expo.out'
+            })
+            .from('.success-icon', {
+                scale: 0,
+                rotation: -45,
+                duration: 0.8,
+                ease: 'back.out(1.7)'
+            }, '-=0.5')
+            .from('.thankyou-card h1', {
+                y: 20,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            }, '-=0.4')
+            .from('.thankyou-card p', {
+                y: 20,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            }, '-=0.6')
+            .from('.btn-home', {
+                y: 20,
+                opacity: 0,
+                duration: 0.8,
+                ease: 'power3.out'
+            }, '-=0.6');
+
+            // Float animation for blobs
+            gsap.to('.blob-1', {
+                x: 30,
+                y: -20,
+                duration: 5,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+            gsap.to('.blob-2', {
+                x: -20,
+                y: 30,
+                duration: 6,
+                repeat: -1,
+                yoyo: true,
+                ease: 'sine.inOut'
+            });
+        });
+    </script>
+</body>
+
+</html>

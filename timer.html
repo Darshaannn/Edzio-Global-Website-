@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Countdown Timer</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        /* --- Countdown Timer Section --- */
+        .countdown-section {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .countdown-container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+        }
+        .countdown-title {
+            color: #000000;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin: 0;
+            letter-spacing: -0.5px;
+        }
+        .timer-display {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 20px;
+            user-select: none;
+        }
+        .timer-column {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        .timer-label {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #11104d; /* --primary-color */
+        }
+        .timer-group {
+            display: flex;
+            gap: 6px;
+        }
+        .digit-card {
+            position: relative;
+            background: #11104d;
+            color: #ffffff;
+            width: 75px;
+            height: 110px;
+            font-size: 5rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+            overflow: hidden;
+        }
+        .digit-val {
+            position: relative;
+            z-index: 3;
+            line-height: 1;
+            transition: transform 0.15s ease-in-out, opacity 0.15s ease-in-out;
+            display: inline-block;
+        }
+        .digit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+            z-index: 2;
+        }
+        .card-crease {
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            background-color: rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+        .timer-separator {
+            color: #11104d; /* --primary-color */
+            font-size: 4.5rem;
+            font-weight: 700;
+            line-height: 1;
+            margin: 0 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 110px;
+        }
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .countdown-section {
+                padding: 30px 15px;
+            }
+            .countdown-title {
+                font-size: 1.6rem;
+            }
+            .timer-display {
+                gap: 8px;
+            }
+            .timer-separator {
+                font-size: 2.5rem;
+                margin: 0 2px;
+                height: 70px;
+            }
+            .digit-card {
+                width: 45px;
+                height: 70px;
+                font-size: 3rem;
+                border-radius: 6px;
+            }
+        }
+        @media (max-width: 480px) {
+            .countdown-title {
+                font-size: 1.3rem;
+            }
+            .timer-display {
+                gap: 4px;
+            }
+            .timer-separator {
+                font-size: 1.8rem;
+                margin: 0 1px;
+                height: 50px;
+            }
+            .digit-card {
+                width: 32px;
+                height: 50px;
+                font-size: 2.2rem;
+                border-radius: 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Countdown Timer Section -->
+    <section class="countdown-section">
+        <div class="countdown-container">
+            <h2 class="countdown-title">September 2026 Intake Application Closes In</h2>
+            <div class="timer-display">
+                <!-- Days -->
+                <div class="timer-column">
+                    <div class="timer-group">
+                        <div class="digit-card" id="days-tens"><span class="digit-val">0</span><span class="card-crease"></span></div>
+                        <div class="digit-card" id="days-ones"><span class="digit-val">0</span><span class="card-crease"></span></div>
+                    </div>
+                    <div class="timer-label">Days</div>
+                </div>
+                <span class="timer-separator">:</span>
+                <!-- Hours -->
+                <div class="timer-column">
+                    <div class="timer-group">
+                        <div class="digit-card" id="hours-tens"><span class="digit-val">0</span><span class="card-crease"></span></div>
+                        <div class="digit-card" id="hours-ones"><span class="digit-val">0</span><span class="card-crease"></span></div>
+                    </div>
+                    <div class="timer-label">Hr</div>
+                </div>
+                <span class="timer-separator">:</span>
+                <!-- Minutes -->
+                <div class="timer-column">
+                    <div class="timer-group">
+                        <div class="digit-card" id="minutes-tens"><span class="digit-val">0</span><span class="card-crease"></span></div>
+                        <div class="digit-card" id="minutes-ones"><span class="digit-val">0</span><span class="card-crease"></span></div>
+                    </div>
+                    <div class="timer-label">Min</div>
+                </div>
+                <span class="timer-separator">:</span>
+                <!-- Seconds -->
+                <div class="timer-column">
+                    <div class="timer-group">
+                        <div class="digit-card" id="seconds-tens"><span class="digit-val">0</span><span class="card-crease"></span></div>
+                        <div class="digit-card" id="seconds-ones"><span class="digit-val">0</span><span class="card-crease"></span></div>
+                    </div>
+                    <div class="timer-label">Sec</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Target date: July 1, 2026, 12:00 AM (midnight)
+            const targetDate = new Date(2026, 6, 1, 0, 0, 0);
+
+            function updateCountdown() {
+                const now = new Date();
+                const diff = targetDate - now;
+
+                if (diff <= 0) {
+                    updateDigits('days', 0);
+                    updateDigits('hours', 0);
+                    updateDigits('minutes', 0);
+                    updateDigits('seconds', 0);
+                    return;
+                }
+
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                updateDigits('days', days);
+                updateDigits('hours', hours);
+                updateDigits('minutes', minutes);
+                updateDigits('seconds', seconds);
+            }
+
+            function updateDigits(prefix, value) {
+                const valueStr = String(value).padStart(2, '0');
+                const tens = valueStr[0];
+                const ones = valueStr[1];
+
+                updateDigitDOM(prefix + '-tens', tens);
+                updateDigitDOM(prefix + '-ones', ones);
+            }
+
+            function updateDigitDOM(id, newValue) {
+                const el = document.getElementById(id);
+                if (!el) return;
+                const valEl = el.querySelector('.digit-val');
+                if (valEl && valEl.textContent !== newValue) {
+                    valEl.style.transform = 'scaleY(0)';
+                    valEl.style.opacity = '0.5';
+                    setTimeout(() => {
+                        valEl.textContent = newValue;
+                        valEl.style.transform = 'scaleY(1)';
+                        valEl.style.opacity = '1';
+                    }, 150);
+                }
+            }
+
+            // Run immediately and then every second
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        });
+    </script>
+</body>
+</html>
