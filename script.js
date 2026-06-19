@@ -511,6 +511,13 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
             const submitBtn = brochureForm.querySelector('.btn-submit');
             const originalText = submitBtn.textContent;
+
+            const mobileInput = brochureForm.querySelector('input[name="mobile"]');
+            if (mobileInput && !/^\d{10}$/.test(mobileInput.value.trim())) {
+                showToast('Please enter a valid 10-digit mobile number.', 'error');
+                return;
+            }
+
             submitBtn.textContent = 'Preparing download…';
             submitBtn.disabled = true;
 
@@ -562,15 +569,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
             }
-    }
-
-    // Force 10-digit numeric constraint on mobile inputs
-    const mobileInputs = document.querySelectorAll('input[name="mobile"]');
-    mobileInputs.forEach(input => {
-        input.addEventListener('input', (e) => {
-            // Replace non-digits
-            e.target.value = e.target.value.replace(/\D/g, '');
         });
-    });
+    }
 });
-

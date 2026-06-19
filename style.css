@@ -3104,6 +3104,12 @@ h6 {
         align-items: flex-start;
         gap: 12px;
     }
+    .btn-download-brochure {
+        padding: 14px 20px;
+        font-size: 0.95rem;
+        width: 100%;
+        justify-content: center;
+    }
 }
 .btn-download-brochure {
     display: inline-flex;
@@ -3212,10 +3218,19 @@ h6 {
 }
 @media (max-width: 768px) {
     .brochure-download-section {
-        padding: 40px 15px;
+        padding: 30px 15px;
     }
     .brochure-box {
-        padding: 25px 20px;
+        padding: 0;
+    }
+    .brochure-left-pane {
+        padding: 35px 20px 15px 20px;
+    }
+    .brochure-right-pane {
+        padding: 15px 20px 35px 20px;
+    }
+    .brochure-right-pane img {
+        max-height: 280px;
     }
     .brochure-modal-content {
         padding: 25px 20px;
