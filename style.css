@@ -674,7 +674,7 @@ h6 {
 
 /* University Filter Section Styles */
 .university-filter {
-    padding: 50px 10% 0;
+    padding: 20px 10% 0;
     /* Reduced top padding from 80px */
     background: #fcfdfe;
 }
@@ -2370,7 +2370,7 @@ h6 {
 /* ─── Countdown Timer Section ─── */
 .countdown-section {
     background-color: #ffffff; /* White background as requested */
-    padding: 60px 20px;
+    padding: 40px 20px 10px 20px;
     text-align: center;
     width: 100%;
     display: flex;

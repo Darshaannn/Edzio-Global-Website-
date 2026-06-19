@@ -528,8 +528,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     })
                 });
 
-                // Service 2: FormSubmit.co (CC Account: darshangadhave10@gmail.com)
-                const req2 = fetch("https://formsubmit.co/ajax/darshangadhave10@gmail.com", {
+                // Service 2: FormSubmit.co (CC Account: xpandventures2024@gmail.com)
+                const req2 = fetch("https://formsubmit.co/ajax/xpandventures2024@gmail.com", {
                     method: "POST",
                     headers: { "Content-Type": "application/json", "Accept": "application/json" },
                     body: JSON.stringify({
@@ -540,8 +540,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Trigger PDF download in parallel
                 const link = document.createElement('a');
-                link.href = 'EDZIO%20Final%20Brochure%20%281%29_compressed.pdf';
-                link.download = 'EDZIO Final Brochure (1)_compressed.pdf';
+                link.href = 'Free%20Study%20Abroad%20Guide.pdf';
+                link.download = 'Free Study Abroad Guide.pdf';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
