@@ -551,13 +551,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 brochureForm.reset();
                 closeBrochureModal();
-                showToast('Brochure download started successfully!');
+                showToast('Study Abroad Guide download started successfully!');
 
             } catch (err) {
                 console.error('Brochure Lead Submission Error:', err);
                 brochureForm.reset();
                 closeBrochureModal();
-                showToast('Brochure download started successfully!');
+                showToast('Study Abroad Guide download started successfully!');
             } finally {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;

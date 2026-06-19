@@ -2912,7 +2912,7 @@ h6 {
     color: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 16px 36px;
-    border-radius: 50px;
+    border-radius: 10px;
     font-weight: 700;
     font-size: 1.05rem;
     letter-spacing: 0.5px;
