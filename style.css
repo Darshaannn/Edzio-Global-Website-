@@ -528,6 +528,10 @@ h6 {
     display: flex;
     gap: 10px;
 }
+.phone-group input {
+    flex: 1;
+    min-width: 0;
+}
 
 .country-code {
     display: flex;
@@ -2089,6 +2093,7 @@ h6 {
         padding-top: 140px;
         text-align: center;
         gap: 20px;
+        align-items: center;
     }
 
     .hero-left {
@@ -2107,6 +2112,7 @@ h6 {
         width: 100%;
         max-width: 480px;
         margin: 0 auto;
+        flex: none;
     }
 
     .uni-tabs {
