@@ -2889,20 +2889,81 @@ h6 {
 
 /* Brochure Download Section */
 .brochure-download-section {
-    padding: 80px 0;
-    background: #f8fafc;
-    border-top: 1px solid rgba(17, 16, 77, 0.05);
-    border-bottom: 1px solid rgba(17, 16, 77, 0.05);
+    padding: 100px 0;
+    background: #0b0a33;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
     text-align: center;
 }
+.brochure-download-section::before,
+.brochure-download-section::after {
+    content: '';
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    filter: blur(120px);
+    opacity: 0.15;
+    pointer-events: none;
+}
+.brochure-download-section::before {
+    background: var(--accent-color);
+    top: -100px;
+    left: -100px;
+}
+.brochure-download-section::after {
+    background: #4f46e5;
+    bottom: -100px;
+    right: -100px;
+}
 .brochure-box {
-    max-width: 700px;
+    max-width: 800px;
     margin: 0 auto;
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 28px;
+    padding: 55px 40px;
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 2;
+}
+.brochure-title-new {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 2.5rem !important;
+    color: #ffffff !important;
+    margin-bottom: 20px;
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.brochure-desc-new {
+    color: #94a3b8 !important;
+    font-size: 1.05rem !important;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.brochure-desc-new strong {
+    color: var(--accent-color) !important;
+}
+.brochure-box .btn-download-brochure {
+    background: linear-gradient(135deg, var(--accent-color) 0%, #4b89ff 100%);
+    color: var(--primary-color);
+    font-weight: 800;
+    box-shadow: 0 10px 30px rgba(125, 211, 226, 0.25);
+    border: none;
+}
+.brochure-box .btn-download-brochure:hover {
     background: #ffffff;
-    border: 1px solid rgba(17, 16, 77, 0.08);
-    border-radius: 24px;
-    padding: 40px;
-    box-shadow: 0 10px 40px rgba(17, 16, 77, 0.04);
+    color: var(--primary-color);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(255, 255, 255, 0.25);
 }
 .btn-download-brochure {
     display: inline-flex;
