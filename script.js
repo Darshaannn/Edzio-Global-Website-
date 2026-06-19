@@ -562,6 +562,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
             }
-        });
     }
+
+    // Force 10-digit numeric constraint on mobile inputs
+    const mobileInputs = document.querySelectorAll('input[name="mobile"]');
+    mobileInputs.forEach(input => {
+        input.addEventListener('input', (e) => {
+            // Replace non-digits
+            e.target.value = e.target.value.replace(/\D/g, '');
+        });
+    });
 });
