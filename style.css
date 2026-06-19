@@ -3073,7 +3073,7 @@ h6 {
         gap: 20px;
     }
     .brochure-left-pane {
-        padding: 50px 30px 20px 30px;
+        padding: 20px 30px 50px 30px;
         align-items: center;
         text-align: center;
     }
@@ -3091,7 +3091,8 @@ h6 {
         align-items: center;
     }
     .brochure-right-pane {
-        padding: 20px 30px 50px 30px;
+        order: -1;
+        padding: 50px 30px 20px 30px;
         justify-content: center;
     }
 }
@@ -3224,10 +3225,10 @@ h6 {
         padding: 0;
     }
     .brochure-left-pane {
-        padding: 35px 20px 15px 20px;
+        padding: 15px 20px 35px 20px;
     }
     .brochure-right-pane {
-        padding: 15px 20px 35px 20px;
+        padding: 35px 20px 15px 20px;
     }
     .brochure-right-pane img {
         max-height: 280px;
