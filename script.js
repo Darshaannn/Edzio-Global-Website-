@@ -540,8 +540,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Trigger PDF download in parallel
                 const link = document.createElement('a');
-                link.href = 'Free%20Study%20Abroad%20Guide.pdf';
-                link.download = 'Free Study Abroad Guide.pdf';
+                link.href = 'Edzio%20Global%20-%20Study%20Abroad%20Guide.pdf';
+                link.download = 'Edzio Global - Study Abroad Guide.pdf';
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);
