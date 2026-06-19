@@ -2889,7 +2889,7 @@ h6 {
 
 /* Brochure Download Section */
 .brochure-download-section {
-    padding: 80px 0;
+    padding: 50px 0;
     background: #f8fafc;
     width: 100%;
 }
@@ -2922,10 +2922,10 @@ h6 {
     gap: 40px;
 }
 .brochure-left-pane {
-    padding: 60px 40px 60px 60px;
+    padding: 40px 40px 40px 60px;
     display: flex;
     flex-direction: column;
-    gap: 25px;
+    gap: 15px;
 }
 .brochure-right-pane {
     position: relative;
@@ -2933,12 +2933,13 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 40px 60px 40px 0;
+    padding: 30px 40px;
+    background: #f8fafc;
 }
 .brochure-right-pane img {
     width: 100%;
     height: auto;
-    max-height: 480px;
+    max-height: 380px;
     object-fit: contain;
 }
 
