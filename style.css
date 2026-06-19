@@ -2938,7 +2938,7 @@ h6 {
 .brochure-right-pane img {
     width: 100%;
     height: auto;
-    max-height: 440px;
+    max-height: 500px;
     object-fit: contain;
 }
 
